@@ -1,0 +1,135 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a done by gopaddle team"
+  version: "v1"
+  title: "Swagger based application"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    name: "API Support"
+    url: "http://www.swagger.io/support"
+    email: "support@swagger.io"
+  license:
+    name: "apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost"
+basePath: "/v1"
+schemes:
+- "http"
+produces:
+- "application/json"
+paths:
+  /python-flask:
+    get:
+      tags:
+      - "default_controller"
+      summary: "python-flask Type"
+      description: "This endponits for get the specified python-flask resource"
+      operationId: "controllers.default_controller.python_flask_get"
+      parameters: []
+      responses:
+        200:
+          description: "An array of python-flask"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/python-flask"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+    post:
+      tags:
+      - "default_controller"
+      summary: "python-flask Type"
+      description: "This endponits for create a new python-flask resource"
+      operationId: "controllers.default_controller.python_flask_post"
+      parameters: []
+      responses:
+        200:
+          description: "description about created resource of python-flask"
+          schema:
+            $ref: "#/definitions/python-flask"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+  /python-flask/{python-flask_id}:
+    get:
+      tags:
+      - "default_controller"
+      summary: "python-flask Type"
+      description: "This endponits for get the specified python-flask resource"
+      operationId: "controllers.default_controller.python_flask_python_flask_id_get"
+      parameters:
+      - name: "python-flask_id"
+        in: "path"
+        description: "Fetch resource id of the python-flask"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "description about created resource of python-flask"
+          schema:
+            $ref: "#/definitions/python-flask"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+    put:
+      tags:
+      - "default_controller"
+      summary: "python-flask Type"
+      description: "This endponits for update the specified python-flask resource"
+      operationId: "controllers.default_controller.python_flask_python_flask_id_put"
+      parameters:
+      - name: "python-flask_id"
+        in: "path"
+        description: "Update resource id of the python-flask"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "description about updated resource of python-flask"
+          schema:
+            $ref: "#/definitions/python-flask"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+    delete:
+      tags:
+      - "default_controller"
+      summary: "python-flask Type"
+      description: "This endponits for delete the specified python-flask resource"
+      operationId: "controllers.default_controller.python_flask_python_flask_id_delete"
+      parameters:
+      - name: "python-flask_id"
+        in: "path"
+        description: "Delete resource id of the python-flask"
+        required: true
+        type: "string"
+      responses:
+        204:
+          description: "Resource deleted"
+        default:
+          description: "Unexpected error"
+          schema:
+            $ref: "#/definitions/Error"
+definitions:
+  python-flask:
+    type: "object"
+    properties:
+      python-flask_id:
+        type: "string"
+        description: "Data field of python-flask_id"
+  Error:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      message:
+        type: "string"
+      fields:
+        type: "string"
